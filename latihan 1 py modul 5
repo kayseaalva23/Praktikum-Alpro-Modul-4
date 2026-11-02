@@ -1,0 +1,56 @@
+# Kaysea Alva Hidayat
+# 065002600036
+# Praktikum Algoritma Pemrograman Modul 5
+
+def ord_nilai_huruf(huruf):
+    if huruf == "A":
+        peringkat = 4.00
+    elif huruf == "A-":
+        peringkat = 3.75
+    elif huruf == "B+":
+        peringkat = 3.50
+    elif huruf == "B":
+        peringkat = 3.00
+    elif huruf == "B-":
+        peringkat = 2.75
+    elif huruf == "C+":
+        peringkat = 2.50
+    elif huruf == "C":
+        peringkat = 1.75
+    elif huruf == "D":
+        peringkat = 1.50
+    elif huruf == "E":
+        peringkat = 1.25
+    else:
+        peringkat = None
+        return None
+
+    return peringkat
+
+
+def hitung_rata_rata():
+    total_nilai = 0
+    jumlah_data = 0
+
+    while True:
+        huruf = input("Masukan nilai huruf:")
+        if huruf == "":
+            break
+
+        peringkat = ord_nilai_huruf(huruf)
+
+        if peringkat is not None:
+            print(f"nilai={peringkat}")
+            total_nilai += peringkat
+            jumlah_data += 1
+        else:
+            print(f"Masukan huruf yang sesuai.")
+
+    if jumlah_data > 0:
+        rata_rata = total_nilai / jumlah_data
+        print(f"Rata-ratanya adalah: {rata_rata}")
+    else:
+        print("Belum ada nilai yang dimasukkan.")
+
+
+hitung_rata_rata()
